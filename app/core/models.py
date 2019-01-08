@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
 
 # Create your models here.
 class UserManager(BaseUserManager):
-    def creat_user(self, email, password, **extra_fields):
+    def create_user(self, email, password, **extra_fields):
         """Creates and saves a new user"""
         if not email:
             raise ValueError('Users must have an email address')
@@ -27,6 +27,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     is_doner = models.BooleanField(default=False)
     is_donee = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
     point_of_contact = models.CharField(max_length=200)
     company_name = models.CharField(max_length=250)
     company_type = models.CharField(max_length=250)
