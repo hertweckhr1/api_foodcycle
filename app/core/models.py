@@ -36,7 +36,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     company_type = models.CharField(max_length=250)
     company_logo_image = models.CharField(max_length=100)
     street_address = models.CharField(max_length=200)
-    street_address2 = models.CharField(max_length=200)
+    street_address2 = models.CharField(max_length=200, blank=True)
     city = models.CharField(max_length=200)
     state = models.CharField(max_length=200)
     zip = models.IntegerField(default=98144)
@@ -62,7 +62,8 @@ class Donation(models.Model):
     donee = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
-        related_name='donee')
+        related_name='donee',
+        blank=True)
 
     def __str__(self):
         return self.product_type

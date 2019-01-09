@@ -13,9 +13,10 @@ class DonationViewSet(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication,)
     permission_classes = (IsAuthenticated,)
 
-    def get_queryset(self):
-        """Retrieve the donations for the authenticated user"""
-        return self.queryset.filter(user=self.request.user)
+# filters specific donations for that user
+    # def get_queryset(self):
+    #     """Retrieve the donations for the authenticated user"""
+    #     return self.queryset.filter(user=self.request.user)
 
     def perform_create(self, serializer):
         """Create a new donation"""
