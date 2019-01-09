@@ -1,6 +1,9 @@
+import datetime
+from django.utils import timezone
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
                                         PermissionsMixin
+from django.conf import settings
 
 # Create your models here.
 class UserManager(BaseUserManager):
@@ -41,3 +44,21 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     USERNAME_FIELD = 'email'
+
+class Donation(models.Model):
+    """Donation object"""
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE
+    )
+    product_type = models.CharField(max_length=200)
+    product_description = models.CharField(max_length=200)
+    product_measurement = models.CharField(max_length=200)
+    quantity = models.IntegerField(default=0)
+    pickup_details = models.CharField(max_length=200)
+    pickup_starttime = models.DateTimeField('pickup_starttime')
+    pickup_endtime = models.DateTimeField('pickup_endtime')
+    donee = models.CharField(max_length=200, blank=True)
+
+    def __str__(self):
+        return self.product_type
