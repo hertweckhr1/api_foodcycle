@@ -49,7 +49,8 @@ class Donation(models.Model):
     """Donation object"""
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='user'
     )
     product_type = models.CharField(max_length=200)
     product_description = models.CharField(max_length=200)
@@ -58,7 +59,10 @@ class Donation(models.Model):
     pickup_details = models.CharField(max_length=200)
     pickup_starttime = models.DateTimeField('pickup_starttime')
     pickup_endtime = models.DateTimeField('pickup_endtime')
-    donee = models.CharField(max_length=200, blank=True)
+    donee = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='donee')
 
     def __str__(self):
         return self.product_type
