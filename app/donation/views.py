@@ -16,3 +16,7 @@ class DonationViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         """Retrieve the donations for the authenticated user"""
         return self.queryset.filter(user=self.request.user)
+
+    def perform_create(self, serializer):
+        """Create a new donation"""
+        serializer.save(user=self.request.user)
