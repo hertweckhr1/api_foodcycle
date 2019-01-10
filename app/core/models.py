@@ -34,7 +34,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     point_of_contact = models.CharField(max_length=200)
     company_name = models.CharField(max_length=250)
     company_type = models.CharField(max_length=250)
-    company_logo_image = models.CharField(max_length=100)
+    company_logo_image = models.CharField(max_length=100, blank=True)
     street_address = models.CharField(max_length=200)
     street_address2 = models.CharField(max_length=200, blank=True)
     city = models.CharField(max_length=200)
