@@ -10,8 +10,8 @@ class DonationViewSet(viewsets.ModelViewSet):
     """Manage donation in the database"""
     serializer_class = serializers.DonationSerializer
     queryset = Donation.objects.all()
-    authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    # authentication_classes = (TokenAuthentication,)
+    # permission_classes = (IsAuthenticated,)
 
 # filters specific donations for that user
     # def get_queryset(self):
