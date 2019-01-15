@@ -9,6 +9,6 @@ class DonationSerializer(serializers.ModelSerializer):
         fields = (
             'id', 'user', 'product_type', 'product_description', 'product_measurement',
             'quantity', 'pickup_details', 'pickup_starttime', 'pickup_endtime',
-            'donee'
+            'status', 'donee'
         )
         read_only_fields = ('id',)

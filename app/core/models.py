@@ -59,11 +59,12 @@ class Donation(models.Model):
     pickup_details = models.CharField(max_length=200)
     pickup_starttime = models.DateTimeField('pickup_starttime')
     pickup_endtime = models.DateTimeField('pickup_endtime')
+    status = models.CharField(max_length=100, default="posted")
     donee = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
         related_name='donee',
-        blank=True)
+        null=True)
 
     def __str__(self):
         return self.product_type
