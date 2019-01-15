@@ -2,6 +2,8 @@ from rest_framework import generics, authentication, permissions
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
 
+from core.models import User
+
 from user.serializers import UserSerializer, AuthTokenSerializer
 
 
@@ -23,3 +25,8 @@ class ManageUserView(generics.RetrieveUpdateAPIView):
     def get_object(self):
         """Retrieve and return authenticated user"""
         return self.request.user
+
+class DoneeInfoView(generics.ListAPIView):
+    """Retrieve list of user company names"""
+    serializer_class = UserSerializer
+    queryset = User.objects.all()
