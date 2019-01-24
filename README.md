@@ -19,19 +19,19 @@ Supports Mobile App Idea inspired to connect supermarkets, restaurants, and farm
 ## Endpoints 
 **Users**
 Create User:
-- `/api/user/create/`
+```/api/user/create/```
 Get Token:
-- `/api/user/token/`
+```/api/user/token/```
 View User Info:
-- `/api/user/me/`
+```/api/user/me/```
 View all user info:
-- `/api/user/donee-info/`
+```/api/user/donee-info/```
 
 **Donations**
 View all Donations:
-- `/api/donation/donations
+```/api/donation/donations```
 To edit, delete, view donation detail:
-- `/api/donation/donations/{donation_number}`
+```/api/donation/donations/{donation_number}```
 
 ## React-Native Front End Reference 
 Uses a backend API using Django with Postgresql database. 
