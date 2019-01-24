@@ -5,6 +5,7 @@ Supports Mobile App Idea inspired to connect supermarkets, restaurants, and farm
 
 ## Motivation 
 40% of foodwaste worldwide is produced in the US
+
 40% of foodwaste in US is at the levels of retailers and restaurants. 
 
 ## Setup 
