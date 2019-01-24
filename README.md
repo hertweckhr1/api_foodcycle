@@ -18,13 +18,21 @@ Supports Mobile App Idea inspired to connect supermarkets, restaurants, and farm
 
 ## Endpoints 
 **Users**
-\nCreate User:\n
+
+Create User:
+
 ```/api/user/create/```
+
 Get Token:
+
 ```/api/user/token/```
-View User Info:\n
+
+View User Info:
+
 ```/api/user/me/```
-View all user info:\n
+
+View all user info:
+
 ```/api/user/donee-info/```
 
 **Donations**
