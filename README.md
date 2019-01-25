@@ -3,6 +3,8 @@ Food-Cycle API Django Rest Framework
 
 Supports Mobile App Idea inspired to connect supermarkets, restaurants, and farms with foodbanks and nonprofit organizations city-wide.
 
+[Deployed Link](http://104.199.122.67:8000/api/user/donee-info/)
+
 ## Motivation 
 40% of foodwaste worldwide is produced in the US
 
